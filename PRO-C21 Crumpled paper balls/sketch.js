@@ -1,8 +1,9 @@
 const Engine = Matter.Engine;
 const Body = Matter.Body;
 const Common = Matter.Common;
+const Bodies = Matter.Bodies;
+const World = Matter.World;
 
-//var width = 800;
 const groundObj = new ground(10, 730, 2200, 20);
 
 const leftSideObj = new ground(700, 665, 20, 110);
@@ -12,6 +13,12 @@ const rightSideObj = new ground(900, 665, 20, 110);
 let engine;
 let world;
 var ball;
+let groundplane;
+
+var groundbase_options = {
+	isStatic: true,
+	render: { fillStyle: '#FFFF00' }
+  };
 
 function setup() {
 	createCanvas(1100, 760);
